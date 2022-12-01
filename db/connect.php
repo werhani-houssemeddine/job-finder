@@ -12,4 +12,9 @@ try{
   die();
 }
 
+$sql = "INSERT INTO `users` 
+  (`email`, `full_name`, `password`, `type`, `date_naissance`)
+   VALUES ('houssem@email.com', 'Houssemeddine', '123456789', 'searcher', CURDATE())
+  ";
+
 ?>

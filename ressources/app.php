@@ -1,8 +1,9 @@
 <?php
 
-getFile('./public/views/login-form.php');
+# $loginForm = getFile('./public/views/login-form.php');
+# $signUpForm = getFile('./public/views/signup-form.php');
 getFile('./db/connect.php');
-getFile('./public/views/signup-form.php');
+
 
 session_start();
 
@@ -18,10 +19,14 @@ if(isset($_SESSION['isAuthenticate'])){
    */
 
   if(isset($_SESSION['page'])){
-    echo $_SESSION['page'] === 'login' ? loginForm() : signUpForm();
+    if($_SESSION['page'] === 'login'){
+      getFile('./public/views/login-form.php');
+    } else {
+      getFile('./public/views/signup-form.php');
+    }
   } else {
     $_SESSION['page'] = 'login';
-    echo loginForm();
+    getFile('./public/views/login-form.php');
   }
 }
 
