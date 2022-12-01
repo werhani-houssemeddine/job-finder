@@ -1,4 +1,4 @@
-.login-form{
+.login-form, .signup-form{
   position: fixed;
   top: 0;
   left: 0;
@@ -8,29 +8,32 @@
   place-items: center;
 }
 
-.login-form > form{
+:has(.login-form, .signup-form) form{
   width: 500px;
-  border: 1px solid white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
   padding: 20px;
   border-radius: 7px;
 }
 
-
-.login-form form .btns{
+:has(.login-form, .signup-form) form .btns{
   display: flex;
   justify-content: space-between;
   gap: 10px;
 }
 
-.login-form form .button-submit{
+:has(.login-form, .signup-form) form .button-submit{
   background-color: #00C851;
   color: white;
-  flex-grow: 1;
+  width: 50%;
 }
 
-.login-form form .button-signup{
-  background-color: #0000ff;
-  color: white;
+:has(.login-form, .signup-form) form .button-signup{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0000ff;
   flex-grow: 1;
+  text-decoration: underline;
+  cursor: pointer;
 }
