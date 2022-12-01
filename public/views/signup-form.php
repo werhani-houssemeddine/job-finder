@@ -41,7 +41,9 @@ function signUpForm(){
         </div>
 
         <div class="btns">
-          <span class="button-signup">already have an account</span>
+          <span class="button-signup">
+            <a href="./ressources/switch.php" > Already have an account </a>
+          </span>
           <button type="submit" class="btn button-submit">Submit</button>
         </div>
           

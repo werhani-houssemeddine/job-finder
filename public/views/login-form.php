@@ -34,7 +34,9 @@ function loginForm(){
         </div>
 
         <div class="btns">
-          <button class="btn button-signup">Sign Up</button>
+          <span class="button-signup">
+            <a href="./ressources/switch.php" > Sign Up </a>
+          </span>
           <button type="submit" class="btn button-submit">Submit</button>
         </div>
         
