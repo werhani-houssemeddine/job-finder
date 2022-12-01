@@ -11,7 +11,26 @@
 .login-form > form{
   width: 500px;
   border: 1px solid white;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
   padding: 20px;
   border-radius: 7px;
+}
+
+
+.login-form form .btns{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.login-form form .button-submit{
+  background-color: #00C851;
+  color: white;
+  flex-grow: 1;
+}
+
+.login-form form .button-signup{
+  background-color: #0000ff;
+  color: white;
+  flex-grow: 1;
 }
