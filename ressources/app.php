@@ -1,5 +1,7 @@
 <?php
 
-echo 'Hello from app file';
+getFile('./public/views/login-form.php');
+
+echo loginForm();
 
 ?>
