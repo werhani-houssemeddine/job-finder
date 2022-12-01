@@ -15,6 +15,7 @@
 <body>
   <div id="root">
     <?php
+    echo "test ";
       if(file_exists('./ressources/app.php')){
 
         require_once './ressources/utiles.php';
