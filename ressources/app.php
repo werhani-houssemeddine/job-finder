@@ -5,8 +5,6 @@
 # getFile('./db/connect.php');
 
 session_start();
-var_dump($_SERVER ["REQUEST_URI"]);
-
 var_dump($_SESSION);
 
 if(isset($_SESSION['isAuthenticate'])){
