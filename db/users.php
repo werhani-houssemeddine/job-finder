@@ -1,7 +1,9 @@
 <?php
 
-# this file contains the PDO arguments
-require './credentials.php';
+const DB_HOST = 'localhost';
+const DB_NAME = 'job-finder';
+const DB_USER = 'root';
+const DB_PASS = '';
 
 try{
   $connection = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
@@ -26,12 +28,20 @@ function getUser($value) {
     ]);
 
 
-    return $request->fetchObject();
+    return $request->fetchAll();
 
   } else {
     echo 'Something Wrong with DB connection';
     die();
   }
+}
+
+function getUserID($id) {
+  global $connection;
+  $request = $connection->prepare('SELECT * FROM `users` WHERE id = ?');
+  $request->execute([$id]);
+
+  return $request->fetchAll();
 }
 
 function addUser($email, $name, $password) {

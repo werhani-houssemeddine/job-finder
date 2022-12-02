@@ -1,33 +1,33 @@
 <?php
 
-echo '<pre>';
-print_r($_REQUEST);
-echo '</pre>';
-
 session_start();
+require_once '../db/users.php';
 
-$_SESSION = $_POST;
+if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['full_name'])){
+  
+  $name = $_POST['full_name'];
+  $password = $_POST['password'];
+  $email = $_POST['email'];
 
-require_once '../db/opertations.php'; 
-/**
- * getUser is a function that accept single arguments which is the email of the user
- * that we want to add it to our DB it return an associative array contains users with that 
- * email if the length of the result is 0 that's mean no user have that email 
- */
+  if(getUser($email)){
 
-var_dump(getUser($_REQUEST['email']));
-return;
+    $_SESSION['error'] = 'User already exist';
+    $_SESSION['email'] = $_POST['email'];
 
-if(count(getUser($_SESSION['email']))){
+    header('Location: /job-finder', true, 301);
 
-  $_SESSION['errors'] = [
-    'error' => true,
-    'message' => 'User already exist'
-  ];
-  $_SESSION['page'] = 'signup';
-  echo '<p> User exist </p>';
+    return ;
+  } else {
+    addUser($email, $name, $password);
+    $_SESSION['isAuthenticate'] = true;
+    $_SESSION['userID'] = 0;
+    
+    header('Location: /job-finder/sign-up', true, 301);
+    return ;
+  }
+  
 } else {
-  $_SESSION['authorized'] = 'complete-signup';
-  header('Location: /job-finder/sign-up', true, 301);
+  header('Location: /job-finder', true, 301);
 }
+
 ?>
