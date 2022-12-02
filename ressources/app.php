@@ -2,7 +2,7 @@
 
 # $loginForm = getFile('./public/views/login-form.php');
 # $signUpForm = getFile('./public/views/signup-form.php');
-getFile('./db/connect.php');
+# getFile('./db/connect.php');
 
 session_start();
 var_dump($_SERVER ["REQUEST_URI"]);
