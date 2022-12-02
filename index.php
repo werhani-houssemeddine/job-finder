@@ -17,9 +17,17 @@
     <?php
       if(file_exists('./ressources/app.php')){
 
-        require_once './ressources/utiles.php';
-        require_once './ressources/app.php';
+        # require_once './ressources/utiles.php';
+        # require_once './ressources/app.php';
         
+        require_once './db/users.php';
+
+        echo '<pre>';
+        print_r(getUser('houssem@email.com'));
+        echo '</pre>';
+
+        removeUser('ala@email.com');
+
       } else {
         echo 'Warning Message !';
         exit(1);
