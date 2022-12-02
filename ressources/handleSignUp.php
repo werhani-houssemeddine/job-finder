@@ -18,10 +18,10 @@ if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['full_nam
 
     return ;
   } else {
-    addUser($email, $name, $password);
+    $id = addUser($email, $name, $password);
     $_SESSION['isAuthenticate'] = true;
-    $_SESSION['userID'] = 0;
-    
+    $_SESSION['userID'] = $id;
+
     header('Location: /job-finder/sign-up', true, 301);
     return ;
   }

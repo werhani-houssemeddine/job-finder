@@ -59,6 +59,8 @@ function addUser($email, $name, $password) {
       'password' => $password
     ]);
 
+    return getUser($email)[0]['id'];
+
   } else {
     echo 'Something Wrong with DB connection';
     die();
