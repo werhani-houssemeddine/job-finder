@@ -24,6 +24,7 @@
 
 :has(.login-form, .signup-form) form .button-submit{
   background-color: #00C851;
+  border: 2px solid #00C851;
   color: white;
   width: 50%;
 }
@@ -34,6 +35,14 @@
   justify-content: center;
   color: #0000ff;
   flex-grow: 1;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   cursor: pointer;
+  border: 2px solid #0000ff;
+  border-radius: 7px;
+}
+
+:has(.login-form, .signup-form) a{
+  color: #0000ff !important;
+  text-decoration: none;
+  font-family: cursive;
 }

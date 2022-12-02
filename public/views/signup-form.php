@@ -43,15 +43,6 @@
       <input type="date" class="date" id="date" name="birthday">
     </div>
 
-    <div class="mb-3">
-      <label for="identity" class="entrence" id="entrence">Type</label>
-      <select id="" name="typeOfAccount">
-        <option value="searcher">searcher</option>
-        <option value="poster">poster</option>
-        <option value="booth">booth</option>
-      </select>
-    </div>
-
     <div class="btns">
       <span class="button-signup">
         <a href="./ressources/switch.php" > Already have an account </a>
