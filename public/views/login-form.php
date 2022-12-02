@@ -1,7 +1,8 @@
 
 <div class="login-form">
   <form action="./ressources/handleLogin.php" method="post">
-    <div class="mb-3">
+    
+  <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label" >Email address</label>
       
       <input 
@@ -29,7 +30,6 @@
       >
 
     </div>
-
     <div class="btns">
       <span class="button-signup">
         <a href="./ressources/switch.php" > Sign Up </a>
