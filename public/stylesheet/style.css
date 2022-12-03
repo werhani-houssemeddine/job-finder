@@ -46,3 +46,11 @@
   text-decoration: none;
   font-family: cursive;
 }
+
+.error-input{
+  border: 1px solid red !important;
+}
+
+.error-message{
+  color: red;
+}
