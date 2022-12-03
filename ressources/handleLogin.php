@@ -30,6 +30,7 @@ if(isset($_POST['email']) && isset($_POST['password'])) {
   
   $_SESSION['isAuthenticate'] = true;
   $_SESSION['userID'] = $user[0]['id'];
+  unset($_SESSION['page']);
 
   header('Location: /job-finder', true, 301);
   
