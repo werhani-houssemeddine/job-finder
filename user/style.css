@@ -1,0 +1,128 @@
+main{
+  height: 100vh;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 30px;
+}
+
+.profile-container{
+  width: 450px !important;
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.profile-image-container{
+  width: 150px !important;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.profile-image-container img {
+  width: 100px;
+}
+
+.btns{
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+article{
+  flex-grow: 1;
+  height: 700px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  margin-right: 30px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  display: grid;
+  gap: 5px;
+  padding: 10px;
+}
+
+article > div{
+  grid-template-columns: repeat(auto, 7);
+  border-radius: 7px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px ;
+}
+
+.btn-svg{
+  display: flex;
+  gap: 5px;
+}
+
+.btn-svg:hover > div {
+  cursor: pointer;
+}
+
+.content{
+  flex-grow: 1;
+  border-radius: 7px;
+  height: 100%;
+}
+
+
+.edit{
+  --main-color: #03fa5e;
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+}
+
+.edit path{
+  stroke: var(--main-color);
+}
+
+.edit:hover{
+  background-color: var(--main-color);
+}
+
+.delete{
+  --main-color: #FF1818;
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+}
+.delete path{
+  stroke: var(--main-color);
+}
+
+.delete:hover{
+  background-color: var(--main-color);
+}
+
+.delete:hover path, .edit:hover path{
+  stroke: white
+}
+
+.remove{
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 20px;
+  cursor: pointer;
+  color: red;
+}
+
+a{
+  text-decoration: none;
+}
+
+.remove:hover a:hover{
+  color: white;
+}
+
+.remove a{
+  transform: scale(1.2);
+  color: red;
+}
+

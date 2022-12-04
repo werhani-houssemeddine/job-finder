@@ -109,8 +109,9 @@
         <strong>mdo</strong>
       </a>
       <ul class="dropdown-menu text-small shadow">
-        <li><a class="dropdown-item" href="#">New project...</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li>
+          <a class="dropdown-item" href="./?addProject">New project...</a>
+        </li> 
         <li>
           <?php 
             $id = $_SESSION['userID'];

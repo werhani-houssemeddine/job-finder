@@ -25,6 +25,8 @@ if(!(isset($_SESSION['isAuthenticate'])) || !($_SESSION['isAuthenticate'])){
         if($_GET['id'] == $_SESSION['userID']){
           require_once './user/index.php';
         }
+      } else if (isset($_GET['addProject'])) {
+          require_once './newProject/index.php';
       } else {
         require './main/jobs.php';
         echo '<pre>';

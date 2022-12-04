@@ -96,14 +96,14 @@ function editInfoUser($id, $img, $cv, $phone, $link, $description) {
   }
 }
 
-function removeUser($email) {
+function removeUser($id) {
   global $connection;
   if($connection) {
     $request = $connection->prepare('
-      DELETE FROM `users` WHERE email = ?
+      DELETE FROM `users` WHERE id = ?
     ');
 
-    $request->execute([$email]);
+    $request->execute([$id]);
 
   } else {
     echo 'Something Wrong with DB connection';
