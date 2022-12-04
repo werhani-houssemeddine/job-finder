@@ -11,6 +11,11 @@
 
   $id = $_SESSION['userID'];
   echo "id: $id <br>";
+
+  var_dump($_SESSION);
+
+  require_once '../db/users.php';
+
 ?>
 
 <?php
@@ -27,8 +32,16 @@
     echo "cv :" . $_POST['cv'] . "<br>";
     echo "image :" . $_POST['image'] . "<br>";
     echo "link :" . $_POST['link'] . "<br>";
-  }
 
+    #var_dump(editInfoUser($id , NULL, NULL, $_POST['phone'], $_POST['link'], $_POST['description']));
+    # var_dump(editInfoUser($id, '', '', 55555555, '', ''));
+    
+    unset($_SESSION['isAuthorized']);
+    header('Location: /job-finder', true, 301);
+
+  }
+  # function editInfoUser($id, $img, $cv, $phone, $link, $description) {
+  # editInfoUser($_POST['image'], $_POST['cv'], $_POST['phone'], $_POST['link'], $_POST['description']);
 ?>
 
 
@@ -59,7 +72,7 @@
           </div>
           <div class="col">
               <label for="formFile" class="form-label">Default file input example</label>
-              <input class="form-control" type="file" id="formFile" name="cv">
+              <input class="form-control" type="file" id="formFile" name="cv" accept="image/png, image/jpeg">
           </div>
         </div>
 

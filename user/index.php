@@ -3,7 +3,8 @@
   $id = $_GET['id'];
 
   echo '<pre>';
-  var_dump(getUserID($id));
+  # var_dump(getUserID($id));
+  var_dump($_SESSION);
   echo '</pre>';
 ?>
 

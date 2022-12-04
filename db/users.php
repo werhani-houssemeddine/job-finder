@@ -67,12 +67,29 @@ function addUser($email, $name, $password) {
   }
 }
 
-function editInfoUser($img, $cv, $phone, $link1, $description) {
+function editInfoUser($id, $img, $cv, $phone, $link, $description) {
   global $connection;
   if($connection) {
-    $request = $connection->prepare('
+    $request = $connection->prepare("
+      UPDATE `users` SET 
+      `phoneNumber` = :phone , 
+      `link` = :link , 
+      `description` = :description,
+      `cv` = :cv,
+      `image` = :image
+      WHERE `users`.`id` = :id;
+    ");
 
-    ');
+    $request->execute([
+      'phone'       => $phone,
+      'id'          => $id,
+      'description' => $description,
+      'link'        => $link,
+      'cv'          => $cv,
+      'image'       => $img
+    ]);
+
+    return [$img, $cv, $phone, $link, $description];
   } else {
     echo 'Something Wrong with DB connection';
     die();
