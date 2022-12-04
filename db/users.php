@@ -67,7 +67,7 @@ function addUser($email, $name, $password) {
   }
 }
 
-function editUser() {
+function editInfoUser($img, $cv, $phone, $link1, $description) {
   global $connection;
   if($connection) {
     $request = $connection->prepare('

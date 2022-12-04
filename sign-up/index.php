@@ -9,7 +9,25 @@
     return ;
   }
 
-  $_SESSION['full_name'] = 'Example';
+  $id = $_SESSION['userID'];
+  echo "id: $id <br>";
+?>
+
+<?php
+
+  if(
+    isset($_POST['phone']) &&
+    isset($_POST['description']) &&
+    isset($_POST['cv']) &&
+    isset($_POST['image']) &&
+    isset($_POST['link'])
+  ){
+    echo "phone :" . $_POST['phone'] . "<br>";
+    echo "description :" . $_POST['description'] . "<br>";
+    echo "cv :" . $_POST['cv'] . "<br>";
+    echo "image :" . $_POST['image'] . "<br>";
+    echo "link :" . $_POST['link'] . "<br>";
+  }
 
 ?>
 
@@ -31,45 +49,38 @@
       </div>
     </div>
 
-    <form action="#" method="post">     
+    <form action="" method="post">     
       <div class="complete-info-part1">
 
         <div class="row" style="margin-bottom: 20px">
           <div class="col">
             <label for="formFile" class="form-label">Default file input example</label>
-            <input class="form-control" type="file" id="formFile">
+            <input class="form-control" type="file" id="formFile" name="image">
           </div>
           <div class="col">
               <label for="formFile" class="form-label">Default file input example</label>
-              <input class="form-control" type="file" id="formFile">
+              <input class="form-control" type="file" id="formFile" name="cv">
           </div>
-        </div>
-
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">
-            <img src="../public/images/tn-logo.png" alt="" width="32" height="32">
-          </span>
-          <input type="text" class="form-control" placeholder="Phone Number" aria-label="Username" aria-describedby="basic-addon1">
         </div>
 
         <div class="row" style="margin-bottom: 20px">
           <div class="input-group col">
             <span class="input-group-text" id="basic-addon1">
-              <img src="../public/images/github-logo.png" alt="" width="32" height="32">
+              <img src="../public/images/tn-logo.png" alt="" width="32" height="32">
             </span>
-            <input type="text" class="form-control" placeholder="Github link" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Phone Number" aria-label="Username" aria-describedby="basic-addon1" name="phone">
           </div>
 
           <div class="input-group col">
             <span class="input-group-text" id="basic-addon1">
             <img src="../public/images/linkdin-logo.png" width="32" height="32" >
             </span>
-            <input type="text" class="form-control" placeholder="Linkedin link" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Linkedin link" aria-label="Username" aria-describedby="basic-addon1" name="link">
           </div>
         </div>
 
         <div class="mb-3">
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Any description ..."></textarea>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Any description ..." name="description"></textarea>
         </div>
 
         <div class="btns">
