@@ -10,6 +10,9 @@ if(!(isset($_SESSION['isAuthenticate'])) || !($_SESSION['isAuthenticate'])){
   return;  
 }
 
+$user = getUserID($_SESSION['userID']);
+$_SESSION['name'] = $user[0]['full_name'];
+
 ?>
 
 <link rel="stylesheet" href="./main/style.css">
@@ -27,11 +30,10 @@ if(!(isset($_SESSION['isAuthenticate'])) || !($_SESSION['isAuthenticate'])){
         }
       } else if (isset($_GET['addProject'])) {
           require_once './newProject/index.php';
+      } else if (isset($_GET['myJobs'])) {
+          require_once './myJobs/index.php';
       } else {
         require './main/jobs.php';
-        echo '<pre>';
-        print_r ($_SESSION);
-        echo '</pre>';
       }
     ?>
   </section>

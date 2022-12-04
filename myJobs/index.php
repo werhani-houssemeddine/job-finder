@@ -4,6 +4,8 @@
     display: flex;
     gap: 20px 
   }
+  .jobs{
+  }
 </style>
 
 <?php
@@ -16,18 +18,19 @@
     echo '<br>' . $error->getmessage();
     die();
   }
+
   $request = $connection->prepare("
-    SELECT * FROM `jobs` WHERE `id` != :id
+    SELECT * FROM `jobs` WHERE `id` = :id
   ");
 
-  $request->execute([ 'id' => $id]);
+  $request->execute(['id' => $id]);
+
   $result = $request->fetchAll();
 
   if(!count($result)){
-    echo '<h1> No Jobs ... </h1>';
+    echo '<p>No Jobs Want to add a new Job ? </p>';
     return ;
   }
-  
   echo '<div class="job-container">';
   foreach($result as $key => $value):
 ?>
@@ -54,7 +57,10 @@
           <div class="btn-group">
             <button type="button" class="btn btn-sm btn-outline-secondary"
               job-id="<?php echo $value['jobID']; ?>"
-            >Apply for job</button>
+            >Delete</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary"
+              job-id="<?php echo $value['jobID']; ?>"
+            >Edit</button>
           </div>
         </div>
       </div>
