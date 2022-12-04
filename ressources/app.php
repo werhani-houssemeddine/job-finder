@@ -12,7 +12,7 @@ if(isset($_SESSION['isAuthenticate']) && $_SESSION['isAuthenticate']){
   $id = $_SESSION['userID'];
   $user = getUserID($id);
 
-  require_once './ressources/main.php';
+  require_once './main/index.php';
 
 } else {
   

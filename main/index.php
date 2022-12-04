@@ -224,3 +224,7 @@ if(!(isset($_SESSION['isAuthenticate'])) || !($_SESSION['isAuthenticate'])){
     </div>
   </article>
 </main>
+
+<script src="./main/script.js">
+
+</script>
