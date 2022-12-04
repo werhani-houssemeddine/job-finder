@@ -24,7 +24,7 @@ if(isset($_SESSION['isAuthenticate']) && $_SESSION['isAuthenticate']){
   if($_SESSION['page'] === 'login'){
     getFile('./login/index.php');
   } else {
-    getFile('./public/views/signup-form.php');
+    getFile('./sign/index.php');
   }
 }
 

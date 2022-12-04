@@ -1,4 +1,11 @@
+<link rel="stylesheet" href="./sign/style.css">
+
 <?php
+
+  if(strpos($_SERVER['REQUEST_URI'], 'sign')){
+    header('Location: /job-finder', true, 301);
+    return;
+  }
   if(isset($_SESSION['error'])){
     $error = $_SESSION['error'];
     unset($_SESSION['error']);
@@ -14,6 +21,9 @@
 ?>
 
 <div class='signup-form'>
+  <div class="image-container">
+    <img src="./public/images/page-logo.png">
+  </div>
   <form action="./ressources/handleSignUp.php" method="post">
 
     <div class="mb-3">
@@ -89,4 +99,3 @@
       
   </form>
 </div>
-<script src="./public/scripts/formValidation.js"></script>
