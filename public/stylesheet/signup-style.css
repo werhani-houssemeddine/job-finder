@@ -36,15 +36,6 @@ section{
   place-items: center;
 }
 
-.prev-1{
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.next-1{
-  border: 1px solid #0000ff;
-  background-color: #0000ff;
-}
 
 .greeting{
   font-size: 1.1rem;

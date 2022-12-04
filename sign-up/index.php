@@ -1,21 +1,23 @@
-<link rel="stylesheet" href="./public/stylesheet/reset.css">
+<?php
+
+  session_start();
+  if(!(isset($_SESSION['isAuthorized'])) || $_SESSION['isAuthorized'] != 'complete-sign-up'){
+    $_SESSION['error'] = true;
+    $_SESSION['message'] = 'Access denied';
+
+    header('Location: /job-finder', true, 301);
+    return ;
+  }
+
+  $_SESSION['full_name'] = 'Example';
+
+?>
+
 
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">  
 <link rel="stylesheet" href=".././public/stylesheet/signup-style.css">
-
-<?php
-
-session_start();
-
-$_SESSION['full_name'] = 'Example';
-
-/*
-echo '<pre>';
-print_r($_SESSION);
-echo '</pre>';
-*/
-?>
+<link rel="stylesheet" href="./style.css">
 
 <section>
   <div class="complete-info">
@@ -29,51 +31,53 @@ echo '</pre>';
       </div>
     </div>
 
-    <form action="#" method="post">
-      
-    <div class="complete-info-part1">
+    <form action="#" method="post">     
+      <div class="complete-info-part1">
 
-        <div class="mb-3">
-          <label for="formFile" class="form-label">Default file input example</label>
-          <input class="form-control" type="file" id="formFile">
-        </div>
-        
-        <div class="mb-3">
-          <label for="formFile" class="form-label">Default file input example</label>
-          <input class="form-control" type="file" id="formFile">
+        <div class="row" style="margin-bottom: 20px">
+          <div class="col">
+            <label for="formFile" class="form-label">Default file input example</label>
+            <input class="form-control" type="file" id="formFile">
+          </div>
+          <div class="col">
+              <label for="formFile" class="form-label">Default file input example</label>
+              <input class="form-control" type="file" id="formFile">
+          </div>
         </div>
 
         <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">+216</span>
+          <span class="input-group-text" id="basic-addon1">
+            <img src="../public/images/tn-logo.png" alt="" width="32" height="32">
+          </span>
           <input type="text" class="form-control" placeholder="Phone Number" aria-label="Username" aria-describedby="basic-addon1">
         </div>
 
+        <div class="row" style="margin-bottom: 20px">
+          <div class="input-group col">
+            <span class="input-group-text" id="basic-addon1">
+              <img src="../public/images/github-logo.png" alt="" width="32" height="32">
+            </span>
+            <input type="text" class="form-control" placeholder="Github link" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+
+          <div class="input-group col">
+            <span class="input-group-text" id="basic-addon1">
+            <img src="../public/images/linkdin-logo.png" width="32" height="32" >
+            </span>
+            <input type="text" class="form-control" placeholder="Linkedin link" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+        </div>
+
         <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Any description ..."></textarea>
         </div>
 
         <div class="btns">
-          <a href="#" class="prev-1">Prev</a>
-          <a href="#" class="next-1">Next</a>
-        </div>
+          <button type="submit" class="btn button-submit">Submit</button>
+        </div>   
 
       </div>
-
-      <div class="complete-info-part2" hidden>
-        <div class="fields">
-          <div class="field"></div>
-          <div class="field"></div>
-          <div class="field"></div>
-        </div>
-
-        <div class="btns">
-          <a href="#" class="next-1">Prev</a>
-          <a href="#" class="prev-1">Next</a>
-        </div>
-
-      </div>
-
     </form>
   </div>
 </section>
+<script src="./script.js"></script>

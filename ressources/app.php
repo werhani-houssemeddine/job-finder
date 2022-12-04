@@ -4,7 +4,7 @@
 # $signUpForm = getFile('./public/views/signup-form.php');
 # getFile('./db/connect.php');
 
-var_dump($_SESSION);
+# var_dump($_SESSION);
 
 if(isset($_SESSION['isAuthenticate']) && $_SESSION['isAuthenticate']){
   require_once './db/users.php';
@@ -12,9 +12,7 @@ if(isset($_SESSION['isAuthenticate']) && $_SESSION['isAuthenticate']){
   $id = $_SESSION['userID'];
   $user = getUserID($id);
 
-  echo '<pre>';
-  print_r($user[0]);
-  echo '</pre>';
+  require_once './ressources/main.php';
 
 } else {
   
@@ -24,7 +22,7 @@ if(isset($_SESSION['isAuthenticate']) && $_SESSION['isAuthenticate']){
   */
 
   if($_SESSION['page'] === 'login'){
-    getFile('./public/views/login-form.php');
+    getFile('./login/index.php');
   } else {
     getFile('./public/views/signup-form.php');
   }

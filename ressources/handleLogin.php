@@ -34,9 +34,10 @@ if(isset($_POST['email']) && isset($_POST['password'])) {
 
   header('Location: /job-finder', true, 301);
   
-  echo "<h1>Hello " . $user[0]['full_name'] . " To Our Page</h1>";
+  # echo "<h1>Hello " . $user[0]['full_name'] . " To Our Page</h1>";
 
 } else {
+  # No email or password
   header('Location: /job-finder', true, 301);
 }
 

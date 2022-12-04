@@ -1,0 +1,33 @@
+.external-links{
+  display: flex;
+}
+
+.external-links div{
+  width: 50% !important;
+}
+
+.button-submit{
+  background-color: #00C851;
+  border: 2px solid #00C851;
+  color: white;
+  width: 50%;
+}
+
+.btns{
+  justify-content: center !important;
+}
+
+.button-submit:hover{
+  background-color: white;
+  color: #00C851;
+  border:2px solid #00C851;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+textarea{
+  max-height: 250px;
+  height: 200px;
+  border: 1px solid rgba(0, 0, 0, 0.696) !important
+}

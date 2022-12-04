@@ -1,0 +1,9 @@
+.links {
+  display: flex;
+  margin: 10px 0;
+  justify-content: space-between;
+}
+
+.error-message{
+  margin-left: 10px;
+}
