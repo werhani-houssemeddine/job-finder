@@ -30,13 +30,28 @@
       echo "<p style='font-size: 1.2rem'>$userName</p>";
     ?>
   </div>
-  <div class="btns"></div>  
+  <div class="btns">
+    <img src="./public/images/message-logo.png" alt="" srcset="" width="36" height="36"
+    <?php echo "title='Send Message'" ?>
+    >
+    <img src="./public/images/gmail-logo.png" alt="" srcset="" width="36" height="36"
+    <?php echo "title='$email'" ?>
+    >
+    <img src="./public/images/phone-logo.png" alt="" srcset="" width="36" height="36" style="padding: 5px"
+    <?php echo "title='$number'" ?>
+    >
+  </div>  
 
 </nav>
 
 <article class="profile-description">
   <div class="profile">
-    <div class="content"></div>
+    <div class="content">
+      <img src="./public/images/person-profile-image-icon.png" alt="" srcset="" height="72" width="72"
+        style="margin-right: 50px"
+      >
+      <?php echo "$userName" ?>
+    </div>
     <div class="btn-svg">
       <div class="edit">
         <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -54,7 +69,11 @@
     </div>
   </div>
   <div class="name">
-    <div class="content"></div>
+    <div class="content">
+      <?php
+        echo "Email :$email";
+      ?>
+    </div>
     <div class="btn-svg">
       <div class="edit">
         <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -72,7 +91,12 @@
     </div>
   </div>
   <div class="description">
-  <div class="content"></div>
+    <div class="content">
+      <?php
+        $description = $user[0]['description'];
+        echo "Description :$description";
+      ?>
+    </div>
     <div class="btn-svg">
       <div class="edit">
         <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -90,7 +114,11 @@
     </div>
   </div>
   <div class="cv">
-    <div class="content"></div>
+    <div class="content">
+      <?php
+        echo "Phone Number: $number";
+      ?>
+    </div>
     <div class="btn-svg">
       <div class="edit">
                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -108,7 +136,12 @@
     </div>
   </div>
   <div class="phone">
-    <div class="content"></div>
+    <div class="content">
+      <?php 
+        $cv = $user[0]['cv'];
+        echo "CV $cv";
+      ?>
+    </div>
     <div class="btn-svg">
       <div class="edit">
                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -126,7 +159,11 @@
     </div>
   </div>
   <div class="email">
-    <div class="content"></div>
+    <div class="content">
+      <?php  
+        echo "LinkedIn :$link";
+      ?>
+    </div>
     <div class="btn-svg">
       <div class="edit">
                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -144,7 +181,9 @@
     </div>
   </div>
   <div class="password">
-    <div class="content"></div>
+    <div class="content">
+      <p>Password: **** **** **** ****</p>
+    </div>
     <div class="btn-svg">
       <div class="edit">
                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24">

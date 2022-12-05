@@ -10,12 +10,11 @@
   }
 
   $id = $_SESSION['userID'];
-  echo "id: $id <br>";
-
-  var_dump($_SESSION);
+  #echo "id: $id <br>";
 
   require_once '../db/users.php';
-
+  $userName = getUserID($id)[0]['full_name'];
+  # echo $userName;
 ?>
 
 <?php
@@ -33,7 +32,7 @@
     echo "image :" . $_POST['image'] . "<br>";
     echo "link :" . $_POST['link'] . "<br>";
 
-    #var_dump(editInfoUser($id , NULL, NULL, $_POST['phone'], $_POST['link'], $_POST['description']));
+    editInfoUser($id , NULL, NULL, $_POST['phone'], $_POST['link'], $_POST['description']);
     # var_dump(editInfoUser($id, '', '', 55555555, '', ''));
     
     unset($_SESSION['isAuthorized']);
@@ -54,7 +53,7 @@
   <div class="complete-info">
     <div class="greeting">
       <?php
-        echo "<p> Hello " . $_SESSION['full_name'] . ", you are welcome to join our website";
+        echo "<p> Hello $userName, you are welcome to join our website";
         echo ". I hope You found what you came for it </p>";
       ?>
       <div>

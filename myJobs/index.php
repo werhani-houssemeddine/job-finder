@@ -56,15 +56,20 @@
         </p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
-            <button type="button" class="btn btn-danger" style="margin-right: 5px"
+            <button type="button" class="btn btn-danger" style="margin-right: 5px; width: 100px"
             >
               <?php 
                 $id = $value['jobID'];
-                echo "<a href='./delete/?id' >Delete</a>" 
+                echo "<a href='./delete/?id' style='color: white; text-decoration: none'>Delete</a>" 
               ?>
             </button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-              Edit
+            <button 
+              type="button" 
+              class="btn btn-primary" 
+              data-bs-toggle="modal" 
+              data-bs-target="#staticBackdrop"
+              style="width: 100px"
+            > Edit
             </button>
           </div>
         </div>

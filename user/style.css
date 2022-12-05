@@ -33,7 +33,15 @@ section {
 
 .btns{
   height: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btns img{
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 7px;
 }
 
 article{
@@ -71,6 +79,9 @@ article > div{
   flex-grow: 1;
   border-radius: 7px;
   height: 100%;
+
+  display: flex;
+  align-items: center;
 }
 
 
